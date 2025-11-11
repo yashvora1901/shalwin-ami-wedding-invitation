@@ -101,6 +101,16 @@ export default {
           "0%": { backgroundPosition: "-200% center" },
           "100%": { backgroundPosition: "200% center" },
         },
+        "heartbeat": {
+          "0%, 100%": { transform: "scale(1)" },
+          "25%": { transform: "scale(1.08)" },
+          "50%": { transform: "scale(1)" },
+          "75%": { transform: "scale(1.08)" },
+        },
+        "pulse-glow": {
+          "0%, 100%": { boxShadow: "0 0 0 0 rgba(212, 82, 107, 0.3)" },
+          "50%": { boxShadow: "0 0 0 8px rgba(212, 82, 107, 0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,6 +120,8 @@ export default {
         "float": "float 3s ease-in-out infinite",
         "petal-fall": "petal-fall 10s linear infinite",
         "shimmer": "shimmer 2s linear infinite",
+        "heartbeat": "heartbeat 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "pulse-glow": "pulse-glow 2s infinite",
       },
     },
   },

@@ -160,3 +160,37 @@ All colors MUST be HSL.
     background-clip: text;
   }
 }
+
+@layer base {
+  @keyframes heartbeat {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.08);
+    }
+    50% {
+      transform: scale(1);
+    }
+    75% {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(212, 82, 107, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 0 8px rgba(212, 82, 107, 0);
+    }
+  }
+
+  .animate-heartbeat {
+    animation: heartbeat 1.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
+import FallingHearts from "./FallingHearts";
 
 const Hero = () => {
   const scrollToNextSection = () => {
@@ -12,6 +13,9 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-romantic">
+      {/* Falling Hearts Animation */}
+      <FallingHearts />
+
       {/* Decorative Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-32 h-32 border-2 border-primary rounded-full" />
@@ -44,17 +48,8 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.p
-            className="text-lg md:text-xl font-body text-foreground/70 mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+          <motion.p className="text-lg md:text-xl font-body text-foreground/70 mb-4" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}>
             You're Invited to Celebrate
           </motion.p>
 
@@ -67,34 +62,22 @@ const Hero = () => {
             Shalwin & Ami
           </motion.h1>
 
-          <motion.div
-            className="w-24 h-1 bg-primary mx-auto mb-6"
-            initial={{ width: 0 }}
-            animate={{ width: 96 }}
-            transition={{ delay: 0.8, duration: 0.6 }}
-          />
+          <motion.div className="w-24 h-1 bg-primary mx-auto mb-6" initial={{ width: 0 }} animate={{ width: 96 }} transition={{ delay: 0.8, duration: 0.6 }} />
 
-          <motion.p
-            className="text-xl md:text-2xl font-body text-foreground/80 mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-          >
+          <motion.p className="text-xl md:text-2xl font-body text-foreground/80 mb-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}>
             30th November 2025
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg"
-              onClick={scrollToNextSection}
-            >
-              Join Our Celebration
-            </Button>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} className="inline-block">
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                onClick={scrollToNextSection}
+              >
+                Join Our Celebration
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
 
