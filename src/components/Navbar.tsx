@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const menuItems = [
     { label: "Welcome", path: "/" },
     { label: "Our Story", path: "/journey" },
@@ -11,39 +14,49 @@ const Header = () => {
   ];
 
   return (
-    <header className="relative w-full h-[75px] bg-white flex items-center justify-center overflow-hidden">
-      {/* Subtle decorative elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-12 left-1/4 w-48 h-48 rounded-full border border-rose-gold blur-md" />
-        <div className="absolute bottom-12 right-1/4 w-32 h-32 rounded-full border border-rose-gold blur-md" />
-      </div>
+    <header className="sticky top-0 z-40 w-full bg-white shadow-md">
+      <div className="w-full h-[60px] md:h-[75px] flex items-center justify-between px-4 md:px-8 lg:px-16">
+        {/* Logo/Brand */}
+        <motion.div className="relative z-10" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
+          <Link to="/" className="text-lg md:text-xl font-heading font-light text-rose-500 tracking-wide hover:text-rose-600 transition-colors">
+            Shalwin & Ami
+          </Link>
+        </motion.div>
 
-      {/* Main content */}
-      <motion.div className="relative z-10 text-center px-8" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}>
-        {/* Main heading */}
-        {/* <motion.h1
-          className="font-heading text-6xl md:text-7xl lg:text-8xl text-rose-gold mb-8 font-light tracking-wide"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-        >
-          Shalwin & Ami
-        </motion.h1> */}
-
-        {/* Decorative line */}
-        {/* <motion.div className="w-32 h-0.5 bg-rose-gold mx-auto mb-8" initial={{ width: 0 }} animate={{ width: 128 }} transition={{ delay: 0.5, duration: 0.8 }} /> */}
-
-        {/* Navigation menu */}
-        <motion.nav className="flex items-center justify-center gap-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7, duration: 0.6 }}>
+        {/* Desktop Navigation */}
+        <motion.nav className="hidden md:flex items-center justify-center gap-0" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.6 }}>
           {menuItems.map((item, index) => (
             <div key={item.path} className="flex items-center">
-              <Link to={item.path} className="px-4 py-2 text-sm md:text-base font-body font-medium text-gray-700 hover:text-rose-gold transition-colors duration-300 tracking-wide">
+              <Link to={item.path} className="px-3 lg:px-4 py-2 text-sm lg:text-base font-body font-medium text-gray-700 hover:text-rose-500 transition-colors duration-300 tracking-wide">
                 {item.label}
               </Link>
               {index < menuItems.length - 1 && <div className="w-px h-4 bg-gray-300 mx-1" />}
             </div>
           ))}
         </motion.nav>
+
+        {/* Mobile Hamburger Menu */}
+        <motion.button className="md:hidden relative z-10 flex flex-col gap-1.5 w-8 h-8 items-center justify-center" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
+          <motion.span className="w-6 h-0.5 bg-gray-700 rounded-full" animate={isOpen ? { rotate: 45, y: 11 } : { rotate: 0, y: 0 }} transition={{ duration: 0.3 }} />
+          <motion.span className="w-6 h-0.5 bg-gray-700 rounded-full" animate={isOpen ? { opacity: 0 } : { opacity: 1 }} transition={{ duration: 0.3 }} />
+          <motion.span className="w-6 h-0.5 bg-gray-700 rounded-full" animate={isOpen ? { rotate: -45, y: -11 } : { rotate: 0, y: 0 }} transition={{ duration: 0.3 }} />
+        </motion.button>
+      </div>
+
+      {/* Mobile Navigation Menu */}
+      <motion.div className="md:hidden overflow-hidden bg-white border-t border-gray-100" initial={{ height: 0 }} animate={{ height: isOpen ? "auto" : 0 }} transition={{ duration: 0.3 }}>
+        <nav className="flex flex-col">
+          {menuItems.map((item) => (
+            <Link
+              key={item.path}
+              to={item.path}
+              onClick={() => setIsOpen(false)}
+              className="px-4 py-3 text-sm font-body font-medium text-gray-700 hover:bg-rose-50 hover:text-rose-500 transition-colors duration-300 border-b border-gray-100 last:border-b-0"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
       </motion.div>
     </header>
   );

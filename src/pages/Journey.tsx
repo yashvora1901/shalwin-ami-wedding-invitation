@@ -1,91 +1,82 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Sparkles, Heart, Flame } from "lucide-react";
+import { Heart, Flame, Flower2, Lamp } from "lucide-react";
 
 const Journey = () => {
   const timelineSteps = [
     {
       title: "Groom's Story",
       subtitle: "Shalwin's Early Life",
-      description: "Born into a loving family, Shalwin grew up with strong values of respect, dedication, and faith. His journey shaped him into a man of character, ready to build a family rooted in tradition.",
-      icon: "✨",
+      description:
+        "Born into a loving family, Shalwin grew up with strong values of respect, dedication, and faith. His journey shaped him into a man of character, ready to build a family rooted in tradition.",
     },
     {
       title: "Bride's Story",
       subtitle: "Ami's Early Life",
       description: "Ami blossomed with grace, kindness, and devotion. Nurtured by her family's blessings, she carried the essence of tradition and warmth, preparing to embrace a new chapter.",
-      icon: "🌸",
     },
     {
       title: "When Families Met",
       subtitle: "The Sacred Union Begins",
-      description: "With prayers to Lord Ganesh, both families came together. Hearts aligned, blessings exchanged, and destiny whispered — this union was written in the stars.",
-      icon: "🪔",
+      description: "With prayers and blessings, both families came together. Hearts aligned, blessings exchanged, and destiny whispered — this union was written in the stars.",
     },
     {
-      title: "Roka Ceremony",
-      subtitle: "First Official Meeting",
-      description: "In the presence of elders and divine grace, Shalwin and Ami met for the first time. Eyes spoke, hearts felt, and a beautiful journey began with blessings and sacred rituals.",
-      icon: "🙏",
+      title: "Pre-Wedding Rituals",
+      subtitle: "Haldi, Mehndi, Engagement",
+      description: "Colors of turmeric, patterns of henna, and melodies of celebration filled the air. Each ritual blessed the couple with prosperity, beauty, and eternal joy.",
+      date: "29th November 2025",
     },
     {
       title: "Engagement",
       subtitle: "Ring Ceremony",
-      description: "Surrounded by joy and celebration, rings were exchanged as a promise of togetherness. Two souls, two families, united in love and faith.",
-      icon: "💍",
+      description: "In an intimate celebration, rings were exchanged as a precious promise of commitment and eternal togetherness. A beautiful prelude to the wedding ceremonies.",
+      date: "Earlier",
     },
     {
-      title: "Pre-Wedding Rituals",
-      subtitle: "Haldi, Mehndi, Sangeet",
-      description: "Colors of turmeric, patterns of henna, and melodies of celebration filled the air. Each ritual blessed the couple with prosperity, beauty, and eternal joy.",
-      icon: "🌼",
+      title: "Var Malaa – First Function",
+      subtitle: "Ceremonial Garland Exchange at Wedding",
+      description: "Before the sacred Hastmelap, the couple exchanges garlands in a beautiful ritual symbolizing their acceptance and devotion to each other.",
+      date: "30th November 2025",
     },
     {
-      title: "Saat Phere – The Seven Sacred Vows",
-      subtitle: "Bound by the sacred fire",
+      title: "Hastmelap",
+      subtitle: "Hastmelap & Jaimala Celebration",
+      description:
+        "Under the sacred Mandap, with blessings of Paramatma as witness, hearts unite in Jain traditions. A new journey begins — from two individuals to one soul, rooted in dharma and seva.",
+      date: "30th November 2025",
+    },
+    {
+      title: "Chaar Phere – The Four Sacred Vows",
+      subtitle: "The Sacred Circumambulation",
       description: "",
       pheras: [
-        { number: 1, vow: "Nourishment & Respect", text: "We walk together to provide and honor each other." },
-        { number: 2, vow: "Strength & Togetherness", text: "We promise to be each other's support in every phase." },
-        { number: 3, vow: "Prosperity & Growth", text: "We vow to grow together in wealth and wisdom." },
-        { number: 4, vow: "Happiness & Love", text: "We commit to fill our lives with love and joy." },
-        { number: 5, vow: "Blessings for Children", text: "We seek divine blessings for our family." },
-        { number: 6, vow: "Health & Lifelong Support", text: "We pledge to care for each other in health and hardship." },
-        { number: 7, vow: "Eternal Bond & Friendship", text: "We become companions, friends, and soulmates forever." },
+        { number: 1, vow: "Nourishment & Support", text: "We vow to nourish and support each other in all circumstances." },
+        { number: 2, vow: "Strength & Courage", text: "We promise to be each other's strength and courage in every phase of life." },
+        { number: 3, vow: "Prosperity & Wisdom", text: "We commit to grow together in prosperity and spiritual wisdom." },
+        { number: 4, vow: "Love & Eternal Bond", text: "We pledge eternal love, loyalty, and companionship forever." },
       ],
-      sanskrit: "सप्तपदी भव — With seven steps, we become one.",
-      icon: "🔥",
-    },
-    {
-      title: "The Wedding Day",
-      subtitle: "30 November 2025",
-      description: "Under the sacred Mandap, with Agni as witness, garlands exchanged, blessings received, and hearts united. A new journey begins — from two individuals to one soul.",
-      icon: "💐",
+      sanskrit: "चार फेरे — With four steps, we unite for eternity.",
+      date: "30th November 2025",
     },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      
+
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-4 gradient-elegant">
         <div className="container mx-auto max-w-4xl text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Flame className="w-16 h-16 text-primary mx-auto mb-6" />
-            <h1 className="font-heading text-6xl md:text-7xl text-primary mb-4">
-              Our Journey
-            </h1>
-            <p className="text-lg md:text-xl font-body text-foreground/70 italic">
-              "In the presence of Agni, we promise forever."
-            </p>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-gradient-romantic border-4 border-primary rounded-full flex items-center justify-center shadow-lg">
+                <Flame className="w-10 h-10 text-primary" />
+              </div>
+            </div>
+            <h1 className="font-heading text-6xl md:text-7xl text-primary mb-4">Our Journey</h1>
+            <p className="text-lg md:text-xl font-body text-foreground/70 italic">"Through four sacred steps, we unite in eternal love."</p>
             <div className="flex items-center justify-center gap-4 mt-6">
               <div className="w-16 h-1 bg-primary/30" />
               <span className="text-primary text-2xl">✦</span>
@@ -103,12 +94,7 @@ const Journey = () => {
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary/30 via-primary/50 to-primary/30" />
 
             {timelineSteps.map((step, index) => (
-              <TimelineItem 
-                key={index} 
-                step={step} 
-                index={index} 
-                isRight={index % 2 !== 0}
-              />
+              <TimelineItem key={index} step={step} index={index} isRight={index % 2 !== 0} />
             ))}
           </div>
 
@@ -120,14 +106,22 @@ const Journey = () => {
             transition={{ duration: 0.8 }}
             className="mt-20 text-center gradient-romantic rounded-2xl p-12 border border-border"
           >
-            <Heart className="w-12 h-12 text-primary mx-auto mb-4 fill-primary" />
-            <p className="font-heading text-4xl md:text-5xl text-primary mb-4">
-              "Two hearts, one soul, bound in the sacred fire of Agni"
-            </p>
-            <div className="flex items-center justify-center gap-2 mt-6">
-              <span className="text-3xl">🪔</span>
-              <span className="text-3xl">🌺</span>
-              <span className="text-3xl">🪔</span>
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-16 bg-white/30 border-2 border-primary rounded-full flex items-center justify-center">
+                <Heart className="w-8 h-8 text-primary fill-primary" />
+              </div>
+            </div>
+            <p className="font-heading text-4xl md:text-5xl text-primary mb-4">"Two hearts, one soul, bound by four sacred vows"</p>
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <Lamp className="w-6 h-6 text-primary" />
+              </div>
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <Flower2 className="w-6 h-6 text-primary" />
+              </div>
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition-colors">
+                <Lamp className="w-6 h-6 text-primary" />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -143,16 +137,16 @@ interface TimelineItemProps {
     title: string;
     subtitle: string;
     description: string;
-    icon: string;
     pheras?: Array<{ number: number; vow: string; text: string }>;
     sanskrit?: string;
+    date?: string;
   };
   index: number;
   isRight: boolean;
 }
 
 const TimelineItem = ({ step, index, isRight }: TimelineItemProps) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
@@ -161,79 +155,62 @@ const TimelineItem = ({ step, index, isRight }: TimelineItemProps) => {
       initial={{ opacity: 0, x: isRight ? 100 : -100 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.1 }}
-      className={`relative mb-16 md:mb-24 ${
-        isRight ? "md:ml-auto md:pl-16" : "md:mr-auto md:pr-16"
-      } md:w-1/2`}
+      className={`mb-16 md:mb-24 md:w-full relative`}
     >
-      {/* Timeline Icon */}
-      <div className="hidden md:block absolute top-8 left-1/2 md:left-auto md:right-auto transform -translate-x-1/2 w-16 h-16 bg-card border-4 border-primary rounded-full flex items-center justify-center text-3xl shadow-lg z-10"
-        style={isRight ? { right: "-2rem" } : { left: "-2rem" }}
-      >
-        {step.icon}
-      </div>
+      {/* Timeline Dot - centered on middle line for full-width item */}
+      <div
+        className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 bg-primary rounded-full border-4 border-background shadow-lg z-10 top-8 md:top-12"
+        style={{ boxShadow: "0 0 0 3px rgba(190, 24, 93, 0.3)" }}
+      />
 
-      {/* Content Card */}
-      <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
-        <div className="flex items-center gap-3 mb-4 md:hidden">
-          <span className="text-4xl">{step.icon}</span>
-          <div>
-            <h3 className="font-heading text-3xl text-primary">{step.title}</h3>
+      {/* Card wrapper: half width with equal padding on both sides */}
+      <div className={isRight ? "md:ml-auto md:w-1/2 md:pr-8" : "md:mr-auto md:w-1/2 md:pl-8"}>
+        <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
+          {/* Mobile Content */}
+          <div className="md:hidden">
+            <h3 className="font-heading text-2xl text-primary">{step.title}</h3>
             <p className="text-sm text-foreground/60 font-body">{step.subtitle}</p>
+            {step.date && <p className="text-xs text-primary/70 font-semibold mt-1">{step.date}</p>}
           </div>
-        </div>
 
-        <div className="hidden md:block">
-          <h3 className="font-heading text-4xl text-primary mb-2">{step.title}</h3>
-          <p className="text-base text-foreground/60 font-body mb-4">{step.subtitle}</p>
-        </div>
+          {/* Desktop Title and Date Display */}
+          <div className="hidden md:block">
+            <h3 className="font-heading text-4xl text-primary mb-2">{step.title}</h3>
+            <p className="text-base text-foreground/60 font-body mb-2">{step.subtitle}</p>
+            {step.date && <p className="text-sm text-primary/70 font-semibold mb-4">{step.date}</p>}
+          </div>
 
-        {step.description && (
-          <p className="text-foreground/80 font-body leading-relaxed">
-            {step.description}
-          </p>
-        )}
+          {step.description && <p className="text-foreground/80 font-body leading-relaxed">{step.description}</p>}
 
-        {/* Seven Pheras Section */}
-        {step.pheras && (
-          <div className="mt-6 space-y-4">
-            {step.pheras.map((phera) => (
-              <motion.div
-                key={phera.number}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: phera.number * 0.1 }}
-                className="bg-gradient-romantic rounded-lg p-4 border border-primary/20"
-              >
-                <div className="flex items-start gap-3">
-                  <span className="text-2xl font-bold text-primary flex-shrink-0">
-                    {phera.number}
-                  </span>
-                  <div>
-                    <h4 className="font-body font-semibold text-foreground mb-1">
-                      {phera.vow}
-                    </h4>
-                    <p className="text-sm text-foreground/70 font-body italic">
-                      {phera.text}
-                    </p>
+          {/* Pheras Section */}
+          {step.pheras && (
+            <div className="mt-6 space-y-4">
+              {step.pheras.map((phera) => (
+                <motion.div
+                  key={phera.number}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: phera.number * 0.1 }}
+                  className="bg-gradient-romantic rounded-lg p-4 border border-primary/20"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl font-bold text-primary flex-shrink-0">{phera.number}</span>
+                    <div>
+                      <h4 className="font-body font-semibold text-foreground mb-1">{phera.vow}</h4>
+                      <p className="text-sm text-foreground/70 font-body italic">{phera.text}</p>
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
-            
-            {step.sanskrit && (
-              <div className="mt-6 pt-6 border-t border-primary/20 text-center">
-                <p className="font-heading text-2xl text-primary italic">
-                  {step.sanskrit}
-                </p>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
+                </motion.div>
+              ))}
 
-      {/* Decorative Elements */}
-      <div className={`hidden md:block absolute top-0 ${isRight ? "left-0" : "right-0"} -z-10`}>
-        <Sparkles className="w-8 h-8 text-primary/20" />
+              {step.sanskrit && (
+                <div className="mt-6 pt-6 border-t border-primary/20 text-center">
+                  <p className="font-heading text-2xl text-primary italic">{step.sanskrit}</p>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

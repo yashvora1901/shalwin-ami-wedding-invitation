@@ -82,14 +82,14 @@ const Hero = () => {
         </motion.div>
 
         {/* Scroll Indicator */}
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2 cursor-pointer"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           onClick={scrollToNextSection}
         >
           <ChevronDown className="text-primary w-8 h-8" />
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
