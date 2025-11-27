@@ -16,7 +16,7 @@ const Index = () => {
       <StorySection />
       <Countdown />
       <PhotoSlider />
-      <WhatsAppShare />
+      {/* <WhatsAppShare /> */}
       <Footer />
     </div>
   );

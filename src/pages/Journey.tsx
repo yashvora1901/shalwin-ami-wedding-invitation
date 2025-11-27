@@ -157,12 +157,6 @@ const TimelineItem = ({ step, index, isRight }: TimelineItemProps) => {
       transition={{ duration: 0.8, delay: index * 0.1 }}
       className={`mb-16 md:mb-24 md:w-full relative`}
     >
-      {/* Timeline Dot - centered on middle line for full-width item */}
-      <div
-        className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 md:w-6 md:h-6 bg-primary rounded-full border-4 border-background shadow-lg z-10 top-8 md:top-12"
-        style={{ boxShadow: "0 0 0 3px rgba(190, 24, 93, 0.3)" }}
-      />
-
       {/* Card wrapper: half width with equal padding on both sides */}
       <div className={isRight ? "md:ml-auto md:w-1/2 md:pr-8" : "md:mr-auto md:w-1/2 md:pl-8"}>
         <div className="bg-card rounded-2xl p-8 shadow-lg border border-border hover:shadow-xl transition-shadow">
